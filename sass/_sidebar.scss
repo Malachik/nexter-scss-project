@@ -1,0 +1,72 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #b28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+// FONT VARIABLES
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+//  responsive break points
+// 1200px
+$bp-largest: 75em;
+// 1000px
+$bp-large: 62.5em;
+
+.sidebar {
+  background-color: $color-primary;
+  grid-column: sidebar-start/ sidebar-end;
+  grid-row: 1/-1;
+
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: $bp-large) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.nav-btn {
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 2rem;
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    display: block;
+  }
+
+  &::before {
+    transform: translateY(-1.5rem);
+  }
+  &::after {
+    transform: translateY(1.3rem);
+  }
+
+  @media (max-width: $bp-large) {
+    margin-top: 0;
+    margin-right: 3rem;
+
+    &::before {
+      transform: translateY(-1.2rem);
+    }
+    &::after {
+      transform: translateY(1rem);
+    }
+  }
+}
